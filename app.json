@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "plataformazelocuidador",
+    "name": "Zelo Cuidador Familiar",
     "slug": "plataformazelocuidador",
-    "version": "1.0.0",
+    "version": "2.3.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,16 +18,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "2",
+      "supportsTablet": false,
+      "bundleIdentifier": "com.plataformazelo.cuidador"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "googleServicesFile": "./google-services.json",
+      "package": "com.plataformazelo.cuidador",
+      "versionCode": 17
+    },
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "iosDisplayInForeground": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8ed4806f-3426-4397-81f2-c63114967272"
+      }
     }
   }
 }

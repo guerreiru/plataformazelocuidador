@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <g id="medicos_x3" transform="translate(37 -5662)">
+    <path id="Icon" d="M54,15H45V6a6,6,0,0,0-5.01-6H20.01A6,6,0,0,0,15,6v9H6a6,6,0,0,0-6,6V45a6,6,0,0,0,6,6H54a6,6,0,0,0,6-6V21A6,6,0,0,0,54,15ZM21,6H39v9H21ZM42,36H33v9H27V36H18V30h9V21h6v9h9Z" transform="translate(-31 5674)" fill="#fff"/>
+    <path id="Box" d="M0,0H72V72H0Z" transform="translate(-37 5662)" fill="none"/>
+  </g>
+</svg>

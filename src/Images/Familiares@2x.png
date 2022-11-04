@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="familiares_x2" transform="translate(-167 -5438)">
+    <g id="Camada_2" data-name="Camada 2" transform="translate(171 5446)">
+      <g id="Camada_6" data-name="Camada 6">
+        <circle id="Elipse_13" data-name="Elipse 13" cx="4" cy="4" r="4" transform="translate(16 8)" fill="#fff"/>
+        <circle id="Elipse_14" data-name="Elipse 14" cx="5" cy="5" r="5" transform="translate(2)" fill="#fff"/>
+        <circle id="Elipse_15" data-name="Elipse 15" cx="5" cy="5" r="5" transform="translate(28)" fill="#fff"/>
+        <path id="Caminho_1110" data-name="Caminho 1110" d="M10,10h8a4,4,0,0,1,4,4v8H6V14A4,4,0,0,1,10,10Z" transform="translate(6 10)" fill="#fff"/>
+        <path id="Caminho_1111" data-name="Caminho 1111" d="M4,7h6V25H0V11A4,4,0,0,1,4,7Z" transform="translate(0 7)" fill="#fff"/>
+        <path id="Caminho_1112" data-name="Caminho 1112" d="M15,7h6a4,4,0,0,1,4,4V25H15Z" transform="translate(15 7)" fill="#fff"/>
+        <path id="Caminho_1113" data-name="Caminho 1113" d="M4,7h8v4H0A4,4,0,0,1,4,7Z" transform="translate(0 7)" fill="#fff"/>
+        <path id="Caminho_1114" data-name="Caminho 1114" d="M14,7h8a4,4,0,0,1,4,4H14Z" transform="translate(14 7)" fill="#fff"/>
+      </g>
+    </g>
+    <path id="Caminho_1115" data-name="Caminho 1115" d="M0,0H48V48H0Z" transform="translate(167 5438)" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "729883983366",
+    "firebase_url": "https://zelo-saude.firebaseio.com",
+    "project_id": "zelo-saude",
+    "storage_bucket": "zelo-saude.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729883983366:android:25ef566ed2f025df984d87",
+        "android_client_info": {
+          "package_name": "com.plataformazelo.cuidador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbU06xQH_KHIz12tLAlqgbYIrflKjtIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729883983366-868kouoiv30s2afo8oemlaqjo0b1isi8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zeloprofissional2021"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729883983366:android:987b7a30b879e1f6984d87",
+        "android_client_info": {
+          "package_name": "com.zelocuidador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbU06xQH_KHIz12tLAlqgbYIrflKjtIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729883983366-868kouoiv30s2afo8oemlaqjo0b1isi8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zeloprofissional2021"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729883983366:android:a9e65852cade979a984d87",
+        "android_client_info": {
+          "package_name": "com.zeloprofissional"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbU06xQH_KHIz12tLAlqgbYIrflKjtIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729883983366-pg1oas86ecvq87omvq8mcro3kugt9usm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729883983366-868kouoiv30s2afo8oemlaqjo0b1isi8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zeloprofissional2021"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

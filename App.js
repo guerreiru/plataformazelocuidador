@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import MyApp from './src';
+import * as Updates from 'expo-updates';
+import configs, { URLS } from './src/configs';
+import 'react-native-url-polyfill/auto';
+import { LogBox, Platform } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+if (Platform.OS !== 'ios') {
+  LogBox.ignoreLogs(['Setting a timer']);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  async function updateApp() {
+    if (configs.BASE_URL.API === URLS.PRODUCTION.API) {
+      const { isAvailable } = await Updates.checkForUpdateAsync();
+      if (isAvailable) {
+        await Updates.fetchUpdateAsync();
+        await Updates.reloadAsync();
+      }
+    }
+  }
+
+  useEffect(() => {
+    updateApp();
+  }, []);
+
+  return <MyApp />;
+}
