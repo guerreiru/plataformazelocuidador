@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import ProfileHeader from 'components/ProfileHeader';
@@ -105,6 +106,15 @@ const Profile = ({ route }) => {
     },
     {
       key: 4,
+      title: 'Exames',
+      description:
+        'Acompanhe os medicamentos em uso e o registro de medicamentos',
+      iconLeft: 'biotech',
+      IconLib: MaterialIcons,
+      onPress: () => navigate('Exams'),
+    },
+    {
+      key: 5,
       title: 'Rotina de Cuidados',
       description:
         'Confira quais são as ações e instruções da rotina de cuidados\n para hoje',
@@ -113,7 +123,7 @@ const Profile = ({ route }) => {
       onPress: () => navigate('CarePlan'),
     },
     {
-      key: 5,
+      key: 6,
       title: 'Intercorrências',
       description:
         'Acompanhe as intercorrências registradas pelos profissionais de saúde',
@@ -121,7 +131,7 @@ const Profile = ({ route }) => {
       onPress: () => navigate('Intercurrence'),
     },
     {
-      key: 6,
+      key: 7,
       title: 'Equipes',
       description:
         'Acesse a lista de pessoas que também fazem parte da equipe de cuidados',

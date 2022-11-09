@@ -22,6 +22,7 @@ import Home from 'pages/Home';
 import { Chat } from 'pages/Senior/Chat';
 
 import Medicines from './medicines.routes';
+import Exams from './exams.routes';
 import CarePlan from './careplan.routes';
 import Teams from './team.routes';
 import colors from 'styles/colors';
@@ -196,6 +197,12 @@ export default function HomeRoutes() {
                 ) : null,
             };
           }}
+        />
+
+        <Screen
+          name='Exams'
+          component={Exams}
+          options={{ title: 'Exames', ...barStyles }}
         />
 
         <Screen
