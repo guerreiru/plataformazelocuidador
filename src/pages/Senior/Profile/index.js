@@ -54,8 +54,6 @@ const Profile = ({ route }) => {
   const checkSeniorHaveRequiredFieldsToExam = () => {
     const { blood_type, public_place, name_health_insurance } = senior;
 
-    console.log(blood_type, public_place, name_health_insurance);
-
     if (
       blood_type === null ||
       public_place === null ||

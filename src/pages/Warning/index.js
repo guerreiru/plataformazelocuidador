@@ -16,8 +16,6 @@ export default function Warning() {
   const isFocused = useIsFocused();
   const [orderWarnings, setOrderWarnings] = useState([]);
 
-  console.log(orderWarnings);
-
   const getDiffDate = (currentDate) => {
     if (isToday(currentDate)) {
       return 'Hoje';
