@@ -51,6 +51,25 @@ const Profile = ({ route }) => {
     }
   };
 
+  const checkSeniorHaveRequiredFieldsToExam = () => {
+    const { blood_type, public_place, name_health_insurance } = senior;
+
+    console.log(blood_type, public_place, name_health_insurance);
+
+    if (
+      blood_type === null ||
+      public_place === null ||
+      name_health_insurance === null
+    ) {
+      navigate({
+        name: 'RequiredFields',
+        params: { senior },
+      });
+      return;
+    }
+    navigate('Exams');
+  };
+
   useEffect(() => {
     getProfile();
   }, [seniorId]);
@@ -111,7 +130,7 @@ const Profile = ({ route }) => {
         'Acompanhe os medicamentos em uso e o registro de medicamentos',
       iconLeft: 'biotech',
       IconLib: MaterialIcons,
-      onPress: () => navigate('Exams'),
+      onPress: () => checkSeniorHaveRequiredFieldsToExam(),
     },
     {
       key: 5,

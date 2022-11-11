@@ -11,6 +11,8 @@ import RegisterCaregiver from 'pages/Senior/Teams/RegisterCaregiver';
 import DisengageReasons from 'pages/Senior/DisengageReasons';
 import HistoryMedicine from 'pages/Senior/Medicines/HistoryMedicine';
 import SearchMedicine from 'pages/Senior/Medicines/SearchMedicine';
+import SearchExam from 'pages/Senior/Exams/SearchExam';
+import RequiredFields from 'pages/Senior/Exams/RequiredFields';
 import Intercurrence from 'pages/Senior/Intercurrence';
 import ViewMedicine from 'pages/Senior/Medicines/ViewMedicine';
 import PersonalData from 'pages/Senior/PersonalData';
@@ -68,6 +70,40 @@ function MedicineStackScreen() {
                   label='FILTRAR'
                 />
               ) : null,
+          };
+        }}
+      />
+    </Navigator>
+  );
+}
+
+const ExamStack = createStackNavigator();
+function ExamStackScreen() {
+  const { Navigator, Screen } = ExamStack;
+  return (
+    <Navigator mode='modal'>
+      <Screen
+        name='Exams'
+        component={Exams}
+        options={({ route, navigation }) => {
+          const { navigate } = navigation;
+          const routeName = getFocusedRouteNameFromRoute(route);
+
+          return {
+            title: 'Exames',
+            ...barStyles,
+            headerRight: () => (
+              <NextButton
+                simple
+                onPress={() =>
+                  navigate({
+                    name: 'SearchExam',
+                    params: { routeName },
+                  })
+                }
+                label='FILTRAR'
+              />
+            ),
           };
         }}
       />
@@ -201,8 +237,11 @@ export default function HomeRoutes() {
 
         <Screen
           name='Exams'
-          component={Exams}
-          options={{ title: 'Exames', ...barStyles }}
+          options={{
+            title: 'Exames',
+            headerShown: false,
+          }}
+          component={ExamStackScreen}
         />
 
         <Screen
@@ -222,6 +261,25 @@ export default function HomeRoutes() {
             ...barStyles,
           }}
         />
+
+        <Screen
+          name='SearchExam'
+          component={SearchExam}
+          options={{
+            title: 'Buscar Exames',
+            ...barStyles,
+          }}
+        />
+
+        <Screen
+          name='RequiredFields'
+          component={RequiredFields}
+          options={{
+            title: 'Exames',
+            ...barStyles,
+          }}
+        />
+
         <Screen
           name='ViewMedicine'
           component={ViewMedicine}

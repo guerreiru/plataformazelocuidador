@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import colors from 'styles/colors';
 import ListExams from 'pages/Senior/Exams/ListExams';
@@ -7,34 +7,53 @@ import useSenior from 'hooks/useSenior';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
 
-function Exams() {
+function Exams({ route }) {
   const styles = { borderTopWidth: 0.2, borderTopColor: colors.LIGHT_GRAY };
   const { getExamBySenior } = useExam();
   const { senior } = useSenior();
   const [examsOnHold, setExamsOnHold] = useState([]);
   const [finishedExams, setFinishedExams] = useState([]);
+  const [filter, setFilter] = useState('date');
 
   const getExams = async () => {
-    const allExams = await getExamBySenior(senior.id);
-
-    setExamsOnHold(allExams.filter((e) => e.status !== 'FINISHED'));
-    setFinishedExams(allExams.filter((e) => e.status === 'FINISHED'));
-
-    return allExams?.sort(function (a, b) {
-      var aa = a.date.split('/').reverse().join(),
-        bb = b.date.split('/').reverse().join();
-      return aa > bb ? -1 : aa < bb ? 1 : 0;
+    const exams = await getExamBySenior(senior.id);
+    const orderedExams = exams?.sort((a, b) => {
+      var aa = a[filter],
+        bb = b[filter];
+      if (filter === 'date') {
+        return aa > bb ? -1 : aa < bb ? 1 : 0;
+      }
+      return aa > bb ? 1 : aa < bb ? -1 : 0;
     });
+
+    const examsOnHold = orderedExams.filter((e) => e.status !== 'FINISHED');
+    const finishedExams = orderedExams.filter((e) => e.status === 'FINISHED');
+
+    setExamsOnHold(examsOnHold);
+    setFinishedExams(finishedExams);
+
+    return;
   };
 
-  const checkAddress = () => {
-    const { city, district, public_place, number, state, zip_code } = senior;
-    console.log();
-  };
+  const getFilterFromRoute = useCallback((routes) => {
+    routes.map((route) => {
+      if (route.params?.filters.type) {
+        setFilter(route.params?.filters.type);
+      }
+      return;
+    });
+  }, []);
 
   useEffect(() => {
     getExams();
-  }, []);
+  }, [filter]);
+
+  useEffect(() => {
+    if (route.state) {
+      getFilterFromRoute(route.state.routes);
+      return;
+    }
+  }, [route]);
 
   return (
     <>
