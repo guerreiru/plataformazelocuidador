@@ -142,12 +142,7 @@ export default function Route() {
         },
       })}
       tabBarOptions={{
-        style: {
-          backgroundColor: Colors.PRIMARY,
-          position: 'absolute',
-          height: 80,
-          paddingTop: 20,
-        },
+        style: { backgroundColor: Colors.PRIMARY },
         activeTintColor: Colors.WHITE,
         inactiveTintColor: Colors.LIGHT_GRAY,
       }}
