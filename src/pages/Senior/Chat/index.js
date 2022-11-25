@@ -67,6 +67,7 @@ export function Chat({ route }) {
           subject: senior.id,
           receiver: userSelected.id,
           message: text,
+          read: false,
         });
 
         if (data) {
