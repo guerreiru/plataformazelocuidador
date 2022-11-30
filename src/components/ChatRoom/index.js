@@ -20,6 +20,7 @@ export function ChatRoom({ user, senior, messages = [], userSelected = {} }) {
           subject: senior.id,
           receiver: userSelected.id,
           message: text,
+          read: false,
         });
       } catch (e) {
         //console.error(e);
@@ -125,7 +126,7 @@ export function ChatRoom({ user, senior, messages = [], userSelected = {} }) {
           userSelected={userSelected}
         />
       </SafeAreaView>
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
     </>
   );
 }
