@@ -35,4 +35,10 @@ export const formatProfession = (profession, gender) => {
   return gender === 'MASCULINO' ? 'Enfermeiro' : 'Enfermeira';
 };
 
+export const formatProfissionAndFullName = (profession, name) => {
+  const primary = profession?.charAt(0)?.toUpperCase();
+  const secundary = profession?.toLowerCase();
+  return `${primary}${secundary.slice(1, 3)}. ${name}`;
+};
+
 export default formatProfession;

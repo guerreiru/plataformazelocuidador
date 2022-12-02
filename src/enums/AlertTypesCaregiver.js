@@ -6,6 +6,7 @@ const AlertTypesCaregiver = {
   NEW_DIAGNOSIS: 'Edições na lista de doenças',
   NEW_HEALTH_PROBLEM: 'Edições na lista de problemas',
   NEW_INTERCURRENCE: 'Nova intercorrência',
+  NEW_EXAME_REQUESTED: 'Novo exame solicitado',
   NEW_PROFESSIONAL: 'Novo profissional de saúde vinculado',
   DISENGAGE_PROFESSIONAL: 'Profissional de saúde desvinculado',
   REENGAGE_PROFESSIONAL: 'Profissional de saúde revinculado',

@@ -14,6 +14,7 @@ export default {
   INACTIVE_TAB_BAR: '#586F8F',
   TEXT: '#6C89AF',
   TEXT_GRAY: '#9FB3C9',
+  TEXT_GRAY_SECONDARY: '#50596f',
   RADIO_BORDER: '#00000033',
   GREEN_TRANSP: (transp) => `rgba(80, 227, 194,0.${transp})`,
   LILAC_TRANSP: (transp) => `rgba(106, 75, 176,0.${transp})`,
