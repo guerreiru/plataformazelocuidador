@@ -67,13 +67,23 @@ const ItemWarning = ({ item }) => {
       return <IconAntDesign name={'exclamationcircleo'} />;
     }
 
+    if (
+      [
+        AlertTypesCaregiver.NEW_EXAM_STARTED,
+        AlertTypesCaregiver.EXAM_FINISHED,
+      ].includes(item.type_alert_caregiver)
+    ) {
+      return <IconAntDesign name={'medicinebox'} />;
+    }
+
     return <IconAntDesign name={'contacts'} />;
   };
 
   return (
     <Container
       backgroundColor={item.caregiver_alert[0].read_date}
-      onPress={() => navigate('WarningMessage', { item: item })}>
+      onPress={() => navigate('WarningMessage', { item: item })}
+    >
       {renderIcon()}
       <SubContainer>
         <ContainerDescription>

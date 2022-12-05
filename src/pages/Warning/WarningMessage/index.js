@@ -58,6 +58,16 @@ const WarningMessage = ({ route }) => {
       return 'VER MEDICAMENTOS';
     }
 
+    if (AlertTypesCaregiver.NEW_EXAM_STARTED === item.type_alert_caregiver) {
+      setRouteName('Exams');
+      return 'VER EXAMES';
+    }
+
+    if (AlertTypesCaregiver.EXAM_FINISHED === item.type_alert_caregiver) {
+      setRouteName('Exams');
+      return 'VER RESULTADO';
+    }
+
     if (
       [
         AlertTypesCaregiver.NEW_INTERCURRENCE,
@@ -91,7 +101,7 @@ const WarningMessage = ({ route }) => {
   return (
     <Page simple={false}>
       <Container>
-        <Imag source={imag} resizeMode="contain" />
+        <Imag source={imag} resizeMode='contain' />
         <Title>{item.type_alert_caregiver}</Title>
         <Description>{item.description_caregiver}</Description>
         <DateTime>{getTime(item.created_at)}</DateTime>
