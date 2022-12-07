@@ -98,7 +98,7 @@ export const adjustParamsToNull = (params) => {
       params[i] = adjustParamsToNull(params[i]);
     }
     return (params = params.filter(function (el) {
-      return el != null;
+      return el !== null;
     }));
   }
   if (typeof params === 'object') {

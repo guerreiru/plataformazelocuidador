@@ -37,14 +37,14 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
           placeholder: 'Ex: Fulano dos Santos',
           validation: setValidationField(
             REGEX_NAME,
-            'Só são permitidas letras (A-Z), acentos e espaços',
+            'Só são permitidas letras (A-Z), acentos e espaços'
           )
             .required('Campo obrigatório não preenchido')
             .min(2, 'Nome deve ter ao menos 2 caracteres')
             .test(
               'start-empty',
               'Esse campo não aceita espaço(s) em branco no início do texto.',
-              (value) => empty(value),
+              (value) => empty(value)
             ),
         },
         {
@@ -53,13 +53,13 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
           placeholder: 'Ex: Lano',
           validation: setValidationField(
             REGEX_NAME,
-            'Só são permitidas letras (A-Z), acentos e espaços',
+            'Só são permitidas letras (A-Z), acentos e espaços'
           )
             .min(2, 'Nome deve ter ao menos 2 caracteres')
             .test(
               'start-empty',
               'Esse campo não aceita espaço(s) em branco no início do texto.',
-              (value) => empty(value),
+              (value) => empty(value)
             ),
         },
         {
@@ -68,14 +68,14 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
           placeholder: 'Ex: Maria da Silva',
           validation: setValidationField(
             REGEX_NAME,
-            'Só são permitidas letras (A-Z), acentos e espaços',
+            'Só são permitidas letras (A-Z), acentos e espaços'
           )
             //.required('Campo obrigatório não preenchido')
             .min(2, 'Nome deve ter ao menos 2 caracteres')
             .test(
               'start-empty',
               'Esse campo não aceita espaço(s) em branco no início do texto.',
-              (value) => empty(value),
+              (value) => empty(value)
             ),
         },
         {
@@ -83,7 +83,7 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
           label: 'CPF',
           mask: 'cpf',
           placeholder: 'XXX.XXX.XXX-XX',
-          editable: senior.cpf == null,
+          editable: senior.cpf === null,
         },
 
         {
@@ -127,7 +127,7 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
             .string()
             .nullable()
             .test('valid-cns', 'O CNS digitado está incorreto', (value) =>
-              validateCNS(value),
+              validateCNS(value)
             ),
         },
         {
@@ -136,13 +136,13 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
           placeholder: 'Ex: Plano N',
           validation: setValidationField(
             REGEX_NAME,
-            'Só são permitidas letras (A-Z), acentos e espaços',
+            'Só são permitidas letras (A-Z), acentos e espaços'
           )
             .min(2, 'Nome deve ter ao menos 2 caracteres')
             .test(
               'start-empty',
               'Esse campo não aceita espaço(s) em branco no início do texto.',
-              (value) => empty(value),
+              (value) => empty(value)
             ),
         },
         {
@@ -161,7 +161,7 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
     const fieldsWithErrors = Object.keys(config.errors);
     const myFields = fields.map((field) => field.name);
     const myErrors = fieldsWithErrors.filter(
-      (field) => myFields.indexOf(field) !== -1,
+      (field) => myFields.indexOf(field) !== -1
     );
 
     return (
@@ -199,7 +199,8 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
     <Formik
       initialValues={senior}
       validationSchema={validationSchema}
-      onSubmit={handleSubmit}>
+      onSubmit={handleSubmit}
+    >
       {(config) => {
         setRefs(config, fields);
         return (
