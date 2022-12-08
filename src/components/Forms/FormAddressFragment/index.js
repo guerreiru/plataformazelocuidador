@@ -3,6 +3,7 @@ import SimpleButton from '../SimpleButton';
 import Input from '../../Inputs/Input';
 import InputMask from '../../Inputs/InputMask';
 import useCEP from '../../../hooks/useCEP';
+import SwitchGroup from '../../SwitchGroup';
 import {
   errorHandler,
   REGEX_NAME,
@@ -13,7 +14,15 @@ import {
 } from '../../../utils';
 import * as yup from 'yup';
 
-import { ContainerColumn, ContainerRows, ContainerCell } from './styles';
+import {
+  ContainerColumn,
+  ContainerRows,
+  ContainerCell,
+  SwitchTitle,
+  SwitchSubTitle,
+  SwitchHeaderWrapper,
+} from './styles';
+import { useEffect } from 'react';
 
 export const formFields = [
   {
@@ -109,8 +118,12 @@ export const formFields = [
 
 export default function FormAddressFragment({ config }) {
   const fields = formFields;
+  const { values, setFieldValue } = config;
   const { getCEP } = useCEP();
   const [isLoading, setLoading] = useState(false);
+  const [isInternal, setIsInternal] = useState(
+    () => config.initialValues.is_internal,
+  );
 
   const renderField = ({ name, label, mask, ...rest }) => {
     const { values, handleChange, errors, setFieldTouched, touched } = config;
@@ -141,20 +154,20 @@ export default function FormAddressFragment({ config }) {
     );
   };
 
-  const checkCep = async () => {
+  const checkCep = async (cepValue) => {
     if (isLoading) {
       return;
     }
     setLoading(true);
     const { values, setFieldValue } = config;
     try {
-      const cep = values.zip_code;
+      const cep = cepValue || values.zip_code;
       if (cep === null || cep.length < 9) {
         errorHandler('Por favor informe o CEP.', { cep });
         return;
       }
 
-      const dataCep = await getCEP(values.zip_code);
+      const dataCep = await getCEP(cep);
 
       if (dataCep && dataCep.cidade && dataCep.estado && dataCep.logradouro) {
         [1, 4, 5, 6].map((i) => (fields[i].editable = false));
@@ -180,46 +193,85 @@ export default function FormAddressFragment({ config }) {
     }
   };
 
+  useEffect(() => {
+    if (isInternal) {
+      setFieldValue('zip_code', '82200-164');
+      setFieldValue('is_internal', true);
+      setFieldValue('complement', 'B');
+      setFieldValue('number', '211');
+      checkCep('82200-164');
+      return;
+    } else if (values.zip_code === '82200-164') {
+      setFieldValue('zip_code', '');
+      setFieldValue('complement', '');
+      setFieldValue('number', '');
+      setFieldValue('public_place', '');
+      setFieldValue('district', '');
+      setFieldValue('state', '');
+      setFieldValue('city', '');
+    }
+
+    setFieldValue('is_internal', false);
+  }, [isInternal]);
+
   return (
-    <ContainerColumn>
-      <ContainerRows>
-        <ContainerCell flex={1} marginLeft={0} marginRight={8}>
-          {renderField(fields[0])}
-        </ContainerCell>
+    <ContainerColumn isInternal={isInternal}>
+      <SwitchGroup
+        label={
+          <SwitchHeaderWrapper>
+            <SwitchTitle>Residente da Organização São Lourenço</SwitchTitle>
+            <SwitchSubTitle>
+              Pessoa idosa é residente da unidade e possui o mesmo endereço da
+              Organização
+            </SwitchSubTitle>
+          </SwitchHeaderWrapper>
+        }
+        value={isInternal.toString()}
+        handleChange={() => setIsInternal(!isInternal)}
+      />
 
-        <ContainerCell flex={1} marginLeft={8} marginRight={0}>
-          <SimpleButton submitText={'Validar CEP'} onPress={checkCep} />
-        </ContainerCell>
-      </ContainerRows>
+      {!isInternal && (
+        <>
+          <ContainerRows>
+            <ContainerCell flex={1} marginLeft={0} marginRight={8}>
+              {renderField(fields[0])}
+            </ContainerCell>
 
-      <ContainerRows>
-        <ContainerCell flex={2} marginLeft={0} marginRight={8}>
-          {renderField(fields[1])}
-        </ContainerCell>
+            <ContainerCell flex={1} marginLeft={8} marginRight={0}>
+              <SimpleButton submitText={'Validar CEP'} onPress={checkCep} />
+            </ContainerCell>
+          </ContainerRows>
 
-        <ContainerCell flex={1} marginLeft={8} marginRight={0}>
-          {renderField(fields[2])}
-        </ContainerCell>
-      </ContainerRows>
+          <ContainerRows>
+            <ContainerCell flex={2} marginLeft={0} marginRight={8}>
+              {renderField(fields[1])}
+            </ContainerCell>
 
-      <ContainerRows>
-        <ContainerCell flex={1} marginLeft={0} marginRight={8}>
-          {renderField(fields[3])}
-        </ContainerCell>
+            <ContainerCell flex={1} marginLeft={8} marginRight={0}>
+              {renderField(fields[2])}
+            </ContainerCell>
+          </ContainerRows>
 
-        <ContainerCell flex={1} marginLeft={8} marginRight={0}>
-          {renderField(fields[4])}
-        </ContainerCell>
-      </ContainerRows>
-      <ContainerRows>
-        <ContainerCell flex={1} marginLeft={0} marginRight={8}>
-          {renderField(fields[5])}
-        </ContainerCell>
+          <ContainerRows>
+            <ContainerCell flex={1} marginLeft={0} marginRight={8}>
+              {renderField(fields[3])}
+            </ContainerCell>
 
-        <ContainerCell flex={2} marginLeft={8} marginRight={0}>
-          {renderField(fields[6])}
-        </ContainerCell>
-      </ContainerRows>
+            <ContainerCell flex={1} marginLeft={8} marginRight={0}>
+              {renderField(fields[4])}
+            </ContainerCell>
+          </ContainerRows>
+          <ContainerRows>
+            <ContainerCell flex={1} marginLeft={0} marginRight={8}>
+              {renderField(fields[5])}
+            </ContainerCell>
+
+            <ContainerCell flex={2} marginLeft={8} marginRight={0}>
+              {renderField(fields[6])}
+            </ContainerCell>
+          </ContainerRows>
+        </>
+      )}
     </ContainerColumn>
   );
 }
