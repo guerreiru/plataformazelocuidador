@@ -32,7 +32,6 @@ export const SwitchSubTitle = styled.Text`
   font-size: 14px;
   line-height: 19px;
   color: #3a424a;
-  width: 100%;
 `;
 
 export const SwitchHeaderWrapper = styled.View``;

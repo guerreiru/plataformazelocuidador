@@ -221,9 +221,9 @@ export default function FormAddressFragment({ config }) {
           <SwitchHeaderWrapper>
             <SwitchTitle>Residente da Organização São Lourenço</SwitchTitle>
             <SwitchSubTitle>
-              Pessoa idosa é residente da unidade e possui o mesmo endereço da
-              Organização
+              Pessoa idosa é residente da unidade e possui
             </SwitchSubTitle>
+            <SwitchSubTitle>o mesmo endereço da Organização</SwitchSubTitle>
           </SwitchHeaderWrapper>
         }
         value={isInternal.toString()}
