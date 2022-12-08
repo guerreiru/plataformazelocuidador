@@ -45,7 +45,7 @@ const ListExams = ({ exams }) => {
     const iconName = status !== 'FINISHED' ? 'watch-later' : 'check-circle';
     return (
       <CardIcon>
-        <Icon name='description' size={32} />
+        <Icon name="description" size={32} />
         <SmallIcon name={iconName} color={iconColor} />
       </CardIcon>
     );
@@ -61,13 +61,13 @@ const ListExams = ({ exams }) => {
         <CardFooter>
           {exam.show_result ? (
             <ButtonDownloadResult onPress={() => handleExamPDF(exam.exam_id)}>
-              <Icon name='file-download' size={16} color='#ffffff' />
+              <Icon name="file-download" size={16} color="#ffffff" />
               <ButtonText>Baixar Resultado</ButtonText>
             </ButtonDownloadResult>
           ) : (
             <ShowResult>
-              <IconFooter name='medical-services' />
-              <Text fontSize={12} color='#527253'>
+              <IconFooter name="medical-services" />
+              <Text fontSize={12} color="#527253">
                 Resultado Disponível para a Equipe de Saúde
               </Text>
             </ShowResult>
@@ -82,8 +82,8 @@ const ListExams = ({ exams }) => {
   if (!exams.length) {
     return (
       <NoExamRequested>
-        <Icon name='watch-later' size={32} color='#9FB3C9' />
-        <Title color='#527253' style={{ marginTop: 8, textAlign: 'center' }}>
+        <Icon name="watch-later" size={32} color="#9FB3C9" />
+        <Title color="#527253" style={{ marginTop: 8, textAlign: 'center' }}>
           Nenhum exame solicitado {'\n'} pela Equipe de Saúde
         </Title>
       </NoExamRequested>
@@ -111,7 +111,7 @@ const ListExams = ({ exams }) => {
                 <Text>
                   {renderProfessional(
                     exam.professional_profession,
-                    exam.professional_name
+                    exam.professional_name,
                   )}
                 </Text>
               </Row>

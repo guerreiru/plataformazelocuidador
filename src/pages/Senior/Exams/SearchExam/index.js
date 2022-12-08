@@ -21,8 +21,8 @@ const SearchExam = ({ navigation, route }) => {
     navigation.setOptions({
       headerLeft: () => (
         <BackButton
-          tintColor='white'
-          iconName='close'
+          tintColor="white"
+          iconName="close"
           onPress={() => navigation.goBack(routeName || 'Available')}
         />
       ),
@@ -44,7 +44,7 @@ const SearchExam = ({ navigation, route }) => {
           name={'types'}
           options={typeOptions}
           value={type}
-          fontStyle='normal'
+          fontStyle="normal"
           handleChange={(value) => setType(value)}
         />
       </ContainerTypes>

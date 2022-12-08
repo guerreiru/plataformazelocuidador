@@ -12,7 +12,7 @@ const ModalViewPDF = ({
   },
 }) => {
   return (
-    <Modal animationType='fade' transparent={false} visible={visible}>
+    <Modal animationType="fade" transparent={false} visible={visible}>
       <View>
         <TouchableOpacity onPress={onCancel}>
           <TextClose> FECHAR</TextClose>
