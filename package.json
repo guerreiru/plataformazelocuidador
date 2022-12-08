@@ -77,13 +77,13 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "yarn prettier-format",
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn prettier-check"
+      "pre-commit": "lint-staged"
     }
   },
   "private": true
