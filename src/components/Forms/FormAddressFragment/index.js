@@ -226,7 +226,7 @@ export default function FormAddressFragment({ config }) {
             <SwitchSubTitle>o mesmo endereço da Organização</SwitchSubTitle>
           </SwitchHeaderWrapper>
         }
-        value={isInternal.toString()}
+        value={isInternal ? isInternal.toString() : 'false'}
         handleChange={() => setIsInternal(!isInternal)}
       />
 
