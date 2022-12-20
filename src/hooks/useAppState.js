@@ -1,16 +1,16 @@
-import { useRef, useState, useEffect } from 'react';
-import { AppState } from 'react-native';
 import moment from 'moment';
+import { useEffect, useRef, useState } from 'react';
+import { AppState } from 'react-native';
 
 import api from '../services/api';
 
-import useConnectivity from './useConnectivity';
-import useMedicines from './useMedicines';
-import useCarePlan from './useCarePlan';
-import { ACTIVE } from '../enums/typesApplicationStates';
-import useLocalNotification from './useLocalNotification';
 import { useDispatch, useSelector } from 'react-redux';
+import { ACTIVE } from '../enums/typesApplicationStates';
 import { TYPES } from '../store/AppReducer';
+import useCarePlan from './useCarePlan';
+import useConnectivity from './useConnectivity';
+import useLocalNotification from './useLocalNotification';
+import useMedicines from './useMedicines';
 
 import { getArrayScheduleByStartAndInterval, getNextDate } from '../utils/date';
 
@@ -22,9 +22,9 @@ export default function useAppState() {
   const { carePlanNotifications } = useCarePlan();
   const [appStateVisible, setAppStateVisible] = useState(appState.current);
   const dispatch = useDispatch();
-  // const medicineScheduled = useSelector(
-  //   (state) => state.medicine.medicineScheduled,
-  // );
+  const medicineScheduled = useSelector(
+    (state) => state.medicine.medicineScheduled,
+  );
 
   const { TYPES_NOTIF, cancelAllLocalNotifications, scheduleNotif } =
     useLocalNotification();
@@ -142,9 +142,9 @@ export default function useAppState() {
     }
   };
 
-  // useEffect(() => {
-  //   doCheck();
-  // }, [appStateVisible, medicineScheduled]);
+  useEffect(() => {
+    doCheck();
+  }, [appStateVisible, medicineScheduled]);
 
   const _handleAppStateChange = (nextAppState) => {
     appState.current = nextAppState;
