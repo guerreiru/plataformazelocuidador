@@ -113,7 +113,7 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
       fields: 'ADDRESS_FIELDS',
     },
     {
-      title: 'Info. Basicas de saúde',
+      title: 'Info. Básicas de saúde',
       iconLetfAlternative: 'ellipsis1',
       iconLeft: 'more_horiz',
       fields: [
