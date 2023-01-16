@@ -1,8 +1,9 @@
-export const validateCNS = (cns) => {
+export const validateCNS = (value) => {
+  const cns = value.replace(/\./g, '');
+
   if (!cns) {
     return true;
   }
-
   var validateSize = cns.length === 15;
   var validateFirstNumber = ['1', '2', '7', '8', '9'].includes(cns[0]);
 
