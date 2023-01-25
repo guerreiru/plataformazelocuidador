@@ -92,10 +92,8 @@ export default function CaregiverPersonalData() {
           validation: yup
             .string()
             .nullable()
-            .required('Este campo não pode ficar em branco')
-            .length(14, 'O CPF digitado está incorreto')
             .test('valid-cpf', 'O CPF digitado está incorreto', (value) =>
-              validateCPF(value),
+              value != null ? validateCPF(value) : true,
             ),
         },
         {
