@@ -126,7 +126,7 @@ export function ChatRoom({ user, senior, messages = [], userSelected = {} }) {
           userSelected={userSelected}
         />
       </SafeAreaView>
-      <StatusBar style='auto' />
+      <StatusBar style="auto" />
     </>
   );
 }

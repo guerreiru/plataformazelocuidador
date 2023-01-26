@@ -42,10 +42,22 @@ export default () => {
 
   const getCarePlans = async (seniorId) => {
     const response = await api.get(`/seniors/${seniorId}/care-plan`);
+
+    let actionPlans = [];
+    let insertedActionPlan = [];
+    for (let plan of response.action_plan) {
+      if (!insertedActionPlan.includes(plan.action.description_caregiver)) {
+        actionPlans = [...actionPlans, plan];
+        insertedActionPlan.push(plan.action.description_caregiver);
+      }
+    }
+    response.action_plan = actionPlans;
+
     dispatch({
       type: TYPES.CARE_PLANS_LISTED,
       payload: response.action_plan,
     });
+
     return response.action_plan;
   };
 

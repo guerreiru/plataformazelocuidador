@@ -6,6 +6,7 @@ export default function InputMask(props) {
   const {
     name,
     mask,
+    maskCustom,
     label,
     placeholder,
     error,
@@ -34,6 +35,7 @@ export default function InputMask(props) {
         }}
         onBlur={() => setFocused(false)}
         type={mask}
+        options={{ mask: maskCustom }}
         value={value}
         onChangeText={(val) => {
           handleChange(val);

@@ -113,16 +113,17 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
       fields: 'ADDRESS_FIELDS',
     },
     {
-      title: 'Outras informações',
+      title: 'Info. Básicas de saúde',
       iconLetfAlternative: 'ellipsis1',
       iconLeft: 'more_horiz',
       fields: [
         {
           name: 'sus_card_number',
           label: 'Número do cartão do SUS',
-          placeholder: 'XXX.XXX.XXX-XXX-XX',
+          placeholder: 'XXX.XXXX.XXXX.XXXX',
           keyboardType: 'numeric',
-          mask: 'only-numbers',
+          mask: 'custom',
+          maskCustom: '999.9999.9999.9999',
           validation: yup
             .string()
             .nullable()

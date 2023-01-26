@@ -90,15 +90,14 @@ export default function Route() {
           style: { backgroundColor: Colors.PRIMARY },
           activeTintColor: Colors.WHITE,
           inactiveTintColor: Colors.LIGHT_GRAY,
-        }}
-      >
+        }}>
         <TermsSceen
-          name='UpdateTerms'
+          name="UpdateTerms"
           component={UpdateTerms}
           options={{ title: 'Termos de Uso' }}
         />
         <TermsSceen
-          name='UpdateExtraTerms'
+          name="UpdateExtraTerms"
           component={UpdateExtraTerms}
           options={{ title: 'Termos de Uso' }}
         />
@@ -118,7 +117,7 @@ export default function Route() {
                 <Icone
                   size={size}
                   source={status ? activeNewWarning : active}
-                  resizeMode='contain'
+                  resizeMode="contain"
                 />
               );
             } else {
@@ -126,7 +125,7 @@ export default function Route() {
                 <Icone
                   size={size}
                   source={status ? disabledNewWarning : disabled}
-                  resizeMode='contain'
+                  resizeMode="contain"
                 />
               );
             }
@@ -136,7 +135,7 @@ export default function Route() {
             <Icone
               size={size}
               source={focused ? active : disabled}
-              resizeMode='contain'
+              resizeMode="contain"
             />
           );
         },
@@ -145,28 +144,27 @@ export default function Route() {
         style: { backgroundColor: Colors.PRIMARY },
         activeTintColor: Colors.WHITE,
         inactiveTintColor: Colors.LIGHT_GRAY,
-      }}
-    >
+      }}>
       <Screen
-        name='Home'
+        name="Home"
         component={HomeRoutes}
         options={{ title: 'Início' }}
       />
 
       <Screen
-        name='VideoRoutes'
+        name="VideoRoutes"
         component={VideoRoutes}
         options={{ title: 'Videos' }}
       />
 
       <Screen
-        name='SettingsRoutes'
+        name="SettingsRoutes"
         component={SettingsRoutes}
         options={{ title: 'Ajustes' }}
       />
 
       <Screen
-        name='Warning'
+        name="Warning"
         component={WarningsRoutes}
         options={{ title: 'Avisos' }}
       />

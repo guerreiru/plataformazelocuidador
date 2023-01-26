@@ -124,7 +124,11 @@ const Reminder = ({ navigation, route }) => {
       </ContainerDate>
       <ContainerTime>
         <Label>Selecione o horário de início</Label>
-        <TimePicker minInc={1} onChange={(value) => setTime(value)} />
+        <TimePicker
+          initialValue={medicine.schedules || '00:00'}
+          minInc={1}
+          onChange={(value) => setTime(value)}
+        />
       </ContainerTime>
       <Text>
         Os horários dos próximos lembretes serão definidos automaticamente.

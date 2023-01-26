@@ -46,17 +46,17 @@ export default function useLoggedUserPhoto() {
     let uploadData = new FormData();
     uploadData.append('id', user.id + '');
     uploadData.append('category', 'caregiver-photo');
-    let imageType = `${data.mime}/${data.path.split('.').pop()}`;
-    if (imageType === 'jpg') {
-      imageType = 'jpeg';
+    let imageFormat = data.path.split('.').pop();
+    if (imageFormat === 'jpg') {
+      imageFormat = 'jpeg';
     }
-
+    let imageType = `${data.mime}/${imageFormat}`;
     uploadData.append('file', {
-      type: `${data.mime}/${data.path.split('.').pop()}`,
+      type: imageType,
       uri: data.path,
       name: data.path.split('/').pop(),
     });
-
+    uploadData.append('mimetype', imageType);
     const url = 'documents/image';
     const res = await ged.post(url, uploadData);
     return res;
@@ -213,10 +213,14 @@ export default function useLoggedUserPhoto() {
       quality: 0.8,
       includeBase64: true,
       allowsEditing: true,
+      base64: true,
+      cropping: true,
     });
+    const resizedImage = await _resizeImage(image.uri);
+
     const res = await sendToGed({
       mime: image.type,
-      path: image.uri,
+      path: resizedImage.uri,
     });
     await refreshPhoto();
     return res;

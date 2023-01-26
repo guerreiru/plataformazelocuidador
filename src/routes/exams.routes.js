@@ -68,16 +68,15 @@ function Exams({ route }) {
           activeTintColor: colors.WHITE,
           inactiveTintColor: colors.LIGHT_GRAY,
           indicatorStyle: { backgroundColor: colors.WHITE },
-        }}
-      >
+        }}>
         <Screen
-          name='Available'
-          children={() => <ListExams exams={finishedExams} type='Available' />}
+          name="Available"
+          children={() => <ListExams exams={finishedExams} type="Available" />}
           options={{ title: 'DISPONÍVEIS' }}
         />
         <Screen
-          name='OnHold'
-          children={() => <ListExams exams={examsOnHold} type='OnHold' />}
+          name="OnHold"
+          children={() => <ListExams exams={examsOnHold} type="OnHold" />}
           options={{ title: 'EM ESPERA' }}
         />
       </Navigator>

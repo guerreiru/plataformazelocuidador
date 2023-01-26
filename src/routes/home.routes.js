@@ -52,9 +52,9 @@ const MedicineStack = createStackNavigator();
 function MedicineStackScreen() {
   const { Navigator, Screen } = MedicineStack;
   return (
-    <Navigator mode='modal'>
+    <Navigator mode="modal">
       <Screen
-        name='Medicines'
+        name="Medicines"
         component={Medicines}
         options={({ route, navigation }) => {
           const { navigate } = navigation;
@@ -67,7 +67,7 @@ function MedicineStackScreen() {
                 <NextButton
                   simple
                   onPress={() => navigate('SearchMedicine')}
-                  label='FILTRAR'
+                  label="FILTRAR"
                 />
               ) : null,
           };
@@ -81,9 +81,9 @@ const ExamStack = createStackNavigator();
 function ExamStackScreen() {
   const { Navigator, Screen } = ExamStack;
   return (
-    <Navigator mode='modal'>
+    <Navigator mode="modal">
       <Screen
-        name='Exams'
+        name="Exams"
         component={Exams}
         options={({ route, navigation }) => {
           const { navigate } = navigation;
@@ -101,7 +101,7 @@ function ExamStackScreen() {
                     params: { routeName },
                   })
                 }
-                label='FILTRAR'
+                label="FILTRAR"
               />
             ),
           };
@@ -129,34 +129,33 @@ export default function HomeRoutes() {
               height: 0,
             },
           },
-        }}
-      >
+        }}>
         <Screen
-          name='Home'
+          name="Home"
           component={Home}
           options={{ title: 'Pessoas de quem cuido', ...barStyles }}
         />
 
         <Screen
-          name='Profile'
+          name="Profile"
           component={Profile}
           options={{ title: 'Pessoa de quem cuido', ...barStyles }}
         />
 
         <Screen
-          name='PersonalData'
+          name="PersonalData"
           component={PersonalData}
           options={{ title: 'Dados pessoais', ...barStyles }}
         />
 
         <Screen
-          name='Intercurrence'
+          name="Intercurrence"
           component={Intercurrence}
           options={{ title: 'Intercorrências', ...barStyles }}
         />
 
         <Screen
-          name='SearchIntercurrence'
+          name="SearchIntercurrence"
           component={SearchIntercurrence}
           options={{
             title: 'Buscar Intercorrências',
@@ -165,7 +164,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='ViewIntercurrence'
+          name="ViewIntercurrence"
           component={ViewIntercurrence}
           options={{
             title: 'Intercorrência',
@@ -174,43 +173,43 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='ClinicalFunctionalEvaluation'
+          name="ClinicalFunctionalEvaluation"
           component={ClinicalFunctionalEvaluation}
           options={{ title: 'Avaliação clínico-funcional', ...barStyles }}
         />
 
         <Screen
-          name='Teams'
+          name="Teams"
           component={Teams}
           options={{ title: 'Equipes', ...barStyles }}
         />
 
         <Screen
-          name='Chat'
+          name="Chat"
           component={Chat}
           options={{ title: 'Chat', ...barStyles }}
         />
 
         <Screen
-          name='ViewProfile'
+          name="ViewProfile"
           component={ViewProfile}
           options={({ route }) => ({ title: route.params.name, ...barStyles })}
         />
 
         <Screen
-          name='CheckCPF'
+          name="CheckCPF"
           component={CheckCPF}
           options={{ title: 'Vincular cuidador', ...barStyles }}
         />
 
         <Screen
-          name='RegisterCaregiver'
+          name="RegisterCaregiver"
           component={RegisterCaregiver}
           options={{ title: 'Convidar cuidador', ...barStyles }}
         />
 
         <Screen
-          name='CarePlan'
+          name="CarePlan"
           component={CarePlan}
           options={({ route }) => {
             const routeName =
@@ -221,7 +220,7 @@ export default function HomeRoutes() {
               headerRight: () =>
                 routeName === 'Instructions' ? (
                   <NextButton
-                    name='alarm'
+                    name="alarm"
                     onPress={() => {
                       if (senior.death_date) {
                         setUseModal();
@@ -236,7 +235,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='Exams'
+          name="Exams"
           options={{
             title: 'Exames',
             headerShown: false,
@@ -245,7 +244,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='Medicines'
+          name="Medicines"
           options={{
             title: 'Medicamentos',
             headerShown: false,
@@ -254,7 +253,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='SearchMedicine'
+          name="SearchMedicine"
           component={SearchMedicine}
           options={{
             title: 'Buscar Medicamentos',
@@ -263,7 +262,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='SearchExam'
+          name="SearchExam"
           component={SearchExam}
           options={{
             title: 'Buscar Exames',
@@ -272,7 +271,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='RequiredFields'
+          name="RequiredFields"
           component={RequiredFields}
           options={{
             title: 'Exames',
@@ -281,7 +280,7 @@ export default function HomeRoutes() {
         />
 
         <Screen
-          name='ViewMedicine'
+          name="ViewMedicine"
           component={ViewMedicine}
           options={{
             title: 'Medicamento',
@@ -289,7 +288,7 @@ export default function HomeRoutes() {
           }}
         />
         <Screen
-          name='HistoryMedicine'
+          name="HistoryMedicine"
           component={HistoryMedicine}
           options={{
             title: 'Medicamento',
@@ -297,7 +296,7 @@ export default function HomeRoutes() {
           }}
         />
         <Screen
-          name='DisengageReasons'
+          name="DisengageReasons"
           component={DisengageReasons}
           navigationOptions={{ tabBarVisible: false }}
           options={{
@@ -306,7 +305,7 @@ export default function HomeRoutes() {
           }}
         />
         <Screen
-          name='Reminder'
+          name="Reminder"
           component={Reminder}
           options={{
             title: 'Alterar Lembrete',

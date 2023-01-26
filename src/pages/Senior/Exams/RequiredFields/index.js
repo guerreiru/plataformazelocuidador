@@ -39,7 +39,7 @@ const RequiredFields = ({ navigation }) => {
             },
             { name: 'Exams' },
           ],
-        })
+        }),
       );
       return;
     }
@@ -52,11 +52,11 @@ const RequiredFields = ({ navigation }) => {
 
   const RenderButtonFill = ({ value }) => {
     if (value) {
-      return <Icon name='check-circle' color={colors.TEXT_GRAY} size={24} />;
+      return <Icon name="check-circle" color={colors.TEXT_GRAY} size={24} />;
     }
     return (
       <ButtonStyled
-        label='Preencher'
+        label="Preencher"
         onPress={() => navigate('PersonalData')}
       />
     );
@@ -73,14 +73,14 @@ const RequiredFields = ({ navigation }) => {
       <RequiredFieldsList>
         <Item>
           <IconContainer>
-            <Icon name='house' />
+            <Icon name="house" />
             <Text>Endereço</Text>
           </IconContainer>
           <RenderButtonFill value={senior.public_place} />
         </Item>
         <Item>
           <IconContainer>
-            <Icon name='local-hospital' />
+            <Icon name="local-hospital" />
             <Text>Plano de Saúde</Text>
           </IconContainer>
 
@@ -88,7 +88,7 @@ const RequiredFields = ({ navigation }) => {
         </Item>
         <Item>
           <IconContainer>
-            <Icon name='opacity' />
+            <Icon name="opacity" />
             <Text>Tipo Sanguíneo</Text>
           </IconContainer>
 
