@@ -219,11 +219,11 @@ export default function FormAddressFragment({ config }) {
       <SwitchGroup
         label={
           <SwitchHeaderWrapper>
-            <SwitchTitle>Residente da Organização São Lourenço</SwitchTitle>
+            <SwitchTitle>Residente da Organização São Lourenço </SwitchTitle>
             <SwitchSubTitle>
-              Pessoa idosa é residente da unidade e possui
+              Pessoa idosa é residente da unidade e possui o mesmo endereço da
+              Organização
             </SwitchSubTitle>
-            <SwitchSubTitle>o mesmo endereço da Organização</SwitchSubTitle>
           </SwitchHeaderWrapper>
         }
         value={isInternal ? isInternal.toString() : 'false'}
