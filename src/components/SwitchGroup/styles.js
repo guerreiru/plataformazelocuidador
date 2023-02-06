@@ -7,7 +7,9 @@ export const Container = styled.View`
   justify-content: space-between;
   align-content: center;
   flex-direction: row;
-  padding-bottom: 20px;
+  flex: 1.5;
+  overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 export const SwitchToggleContainer = styled.View`

@@ -13,7 +13,7 @@ export const ContainerRows = styled.View`
 `;
 
 export const ContainerCell = styled.View`
-  height: 80px;
+  min-height: 80px;
   flex: ${({ flex }) => flex};
   align-self: stretch;
   justify-content: center;
