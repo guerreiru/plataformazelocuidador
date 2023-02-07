@@ -38,7 +38,8 @@ const DisengageReasons = ({ route }) => {
         'Só são permitidas letras (A-Z), acentos e espaços',
       )
         .required('Este campo não pode ficar em branco')
-        .min(2, 'Nome deve ter ao menos 2 caracteres')
+        .min(3, 'O motivo deve conter no mínimo 3 caracteres')
+        .max(100, 'Máximo de 100 caracteres')
         .trim(),
     },
   ];
