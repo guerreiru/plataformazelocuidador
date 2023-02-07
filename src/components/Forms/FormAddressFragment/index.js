@@ -217,14 +217,10 @@ export default function FormAddressFragment({ config }) {
   return (
     <ContainerColumn isInternal={isInternal}>
       <SwitchGroup
-        label={
-          <SwitchHeaderWrapper>
-            <SwitchTitle>Residente da Organização São Lourenço </SwitchTitle>
-            <SwitchSubTitle>
-              Pessoa idosa é residente da unidade e possui o mesmo endereço da
-              Organização
-            </SwitchSubTitle>
-          </SwitchHeaderWrapper>
+        label="Residente da Organização São Lourenço"
+        theme="bold"
+        description={
+          'Pessoa idosa é residente da unidade e possui o mesmo endereço da Organização'
         }
         value={isInternal ? isInternal.toString() : 'false'}
         handleChange={() => setIsInternal(!isInternal)}

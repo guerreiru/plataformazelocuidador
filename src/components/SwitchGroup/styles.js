@@ -7,13 +7,14 @@ export const Container = styled.View`
   justify-content: space-between;
   align-content: center;
   flex-direction: row;
-  flex: 1.5;
+  align-self: stretch;
   margin-bottom: 20px;
 `;
 
 export const SwitchToggleContainer = styled.View`
   flex-direction: column;
   justify-content: center;
+  align-self: stretch;
 `;
 
 export const ContainerText = styled.View`
@@ -30,14 +31,24 @@ export const Title = styled.Text`
     if (theme === 'dark') {
       return colors.WHITE;
     }
+    if (theme === 'bold') {
+      return colors.BLACK;
+    }
     return highlighted ? colors.PRIMARY : colors.LABEL;
   }};
-  flex: 1;
+  font-weight: ${({ theme }) => {
+    if (theme === 'bold') {
+      return 700;
+    }
+    return 'inherit';
+  }};
+
   margin-bottom: 10px;
 `;
 
 export const Description = styled.Text`
   font-size: ${FONT_SIZE}px;
+  align-self: stretch;
   color: ${colors.LABEL};
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 export const ContainerColumn = styled.View`
   flex-direction: column;
-  height: ${({ isInternal }) => (isInternal ? '90px' : '430px')};
+  height: ${({ isInternal }) => (isInternal ? '90px' : '450px')};
   /* margin-bottom: 10px; */
 `;
 
@@ -40,5 +40,8 @@ export const SwitchSubTitle = styled.Text`
 `;
 
 export const SwitchHeaderWrapper = styled.View`
+  flex-direction: column;
+  align-self: stretch;
+  border: 1px solid red;
   width: 100%;
 `;
