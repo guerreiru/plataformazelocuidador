@@ -8,7 +8,6 @@ export const Container = styled.View`
   align-content: center;
   flex-direction: row;
   flex: 1.5;
-  overflow: hidden;
   margin-bottom: 20px;
 `;
 

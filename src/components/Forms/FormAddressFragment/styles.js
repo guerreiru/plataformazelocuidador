@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 export const ContainerColumn = styled.View`
   flex-direction: column;
-  height: ${({ isInternal }) => (isInternal ? 'auto' : '400px')};
-  margin-bottom: 10px;
+  height: ${({ isInternal }) => (isInternal ? '90px' : '430px')};
+  /* margin-bottom: 10px; */
 `;
 
 export const ContainerRows = styled.View`
