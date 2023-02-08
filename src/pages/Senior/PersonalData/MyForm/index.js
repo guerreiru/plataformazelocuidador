@@ -189,7 +189,7 @@ const MyForm = ({ handleSubmit, setRefs, senior }) => {
     return (
       <Container padding={20}>
         {_section.fields === 'ADDRESS_FIELDS' ? (
-          <FormAddressFragment config={config} />
+          <FormAddressFragment config={config} isSeniorData />
         ) : (
           <FormFragment config={config} fields={_section.fields} />
         )}

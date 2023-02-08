@@ -2,7 +2,8 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 export const ContainerColumn = styled.View`
   flex-direction: column;
-  height: ${({ isInternal }) => (isInternal ? '90px' : '450px')};
+  height: ${({ isInternal, isSeniorData }) =>
+    isInternal ? '90px' : isSeniorData ? '450px' : '330px'};
   /* margin-bottom: 10px; */
 `;
 

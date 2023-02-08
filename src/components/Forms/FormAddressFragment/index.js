@@ -116,7 +116,7 @@ export const formFields = [
   },
 ];
 
-export default function FormAddressFragment({ config }) {
+export default function FormAddressFragment({ config, isSeniorData }) {
   const fields = formFields;
   const { values, setFieldValue } = config;
   const { getCEP } = useCEP();
@@ -215,16 +215,18 @@ export default function FormAddressFragment({ config }) {
   }, [isInternal]);
 
   return (
-    <ContainerColumn isInternal={isInternal}>
-      <SwitchGroup
-        label="Residente da Organização São Lourenço"
-        theme="bold"
-        description={
-          'Pessoa idosa é residente da unidade e possui o mesmo endereço da Organização'
-        }
-        value={isInternal ? isInternal.toString() : 'false'}
-        handleChange={() => setIsInternal(!isInternal)}
-      />
+    <ContainerColumn isInternal={isInternal} isSeniorData={isSeniorData}>
+      {isSeniorData && (
+        <SwitchGroup
+          label="Residente da Organização São Lourenço"
+          theme="bold"
+          description={
+            'Pessoa idosa é residente da unidade e possui o mesmo endereço da Organização'
+          }
+          value={isInternal ? isInternal.toString() : 'false'}
+          handleChange={() => setIsInternal(!isInternal)}
+        />
+      )}
 
       {!isInternal && (
         <>
