@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import moment from 'moment';
 
-import { REGEX_NAME, empty } from '../utils';
+import { REGEX_NAME, REGEX_FULL_NAME, empty } from '../utils';
 
 export const basicFieldsCaregiver = () => [
   {
@@ -10,10 +10,16 @@ export const basicFieldsCaregiver = () => [
     placeholder: 'Ex: Fulano dos Santos',
     validation: Yup.string()
       .required('Este campo não pode ficar em branco')
-      .matches(REGEX_NAME, {
-        message: 'Só são permitidas letras (A-Z), acentos e espaços',
-      })
-      .min(2, 'Nome deve ter ao menos 2 caracteres')
+      .min(3, 'O nome deve conter no mínimo 3 caracteres')
+      .max(100, 'Máximo de 100 caracteres')
+      .matches(
+        REGEX_NAME,
+        'Nome não deve conter números ou caracteres especiais',
+      )
+      .matches(
+        REGEX_FULL_NAME,
+        'Nome e sobrenome, ambos devem conter ao menos 3 caracteres',
+      )
       .test(
         'teste',
         'Esse campo não aceita espaço(s) em branco no início do texto.',

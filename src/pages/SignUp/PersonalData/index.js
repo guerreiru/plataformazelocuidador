@@ -19,6 +19,7 @@ import {
   LinkTerms,
   Title,
 } from './styles';
+import { REGEX_FULL_NAME } from '../../../utils';
 
 export default function SignUpPersonalData({ route, navigation }) {
   const { cpf, password } = route.params;
@@ -96,10 +97,15 @@ export default function SignUpPersonalData({ route, navigation }) {
             placeholder: 'Ex: Fulano dos Santos',
             validation: Yup.string()
               .required('Este campo não pode ficar em branco')
+              .min(3, 'O nome deve conter no mínimo 3 caracteres')
+              .max(100, 'Máximo de 100 caracteres')
               .matches(REGEX_NAME, {
                 message: 'Só são permitidas letras (A-Z), acentos e espaços',
               })
-              .min(2, 'Nome deve ter ao menos 2 caracteres')
+              .matches(
+                REGEX_FULL_NAME,
+                'Nome e sobrenome, ambos devem conter ao menos 3 caracteres',
+              )
               .test(
                 'validation-empty',
                 'Esse campo não aceita espaço(s) em branco no início do texto.',

@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
-
+import { Dimensions } from 'react-native';
 export const ContainerColumn = styled.View`
   flex-direction: column;
-  height: ${({ isInternal }) => (isInternal ? 'auto' : '400px')};
-  margin-bottom: 10px;
+  height: ${({ isInternal, isSeniorData }) =>
+    isInternal ? '90px' : isSeniorData ? '450px' : '330px'};
+  /* margin-bottom: 10px; */
 `;
 
 export const ContainerRows = styled.View`
@@ -13,7 +14,7 @@ export const ContainerRows = styled.View`
 `;
 
 export const ContainerCell = styled.View`
-  height: 80px;
+  min-height: 80px;
   flex: ${({ flex }) => flex};
   align-self: stretch;
   justify-content: center;
@@ -22,6 +23,9 @@ export const ContainerCell = styled.View`
 `;
 
 export const SwitchTitle = styled.Text`
+  text-overflow: clip;
+  width: ${Dimensions.get('window').width - 90}px;
+  margin-right: 50px;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -29,9 +33,16 @@ export const SwitchTitle = styled.Text`
 `;
 
 export const SwitchSubTitle = styled.Text`
+  text-overflow: clip;
+  width: ${Dimensions.get('window').width - 90}px;
   font-size: 14px;
   line-height: 19px;
   color: #3a424a;
 `;
 
-export const SwitchHeaderWrapper = styled.View``;
+export const SwitchHeaderWrapper = styled.View`
+  flex-direction: column;
+  align-self: stretch;
+  border: 1px solid red;
+  width: 100%;
+`;

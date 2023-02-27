@@ -88,7 +88,6 @@ export default function Login() {
                   placeholder: '******',
                   label: 'Senha',
                   validation: Yup.string()
-                    .min(6, 'A senha deve conter no mínimo 6 dígitos')
                     .required('Este campo não pode ficar em branco'),
                 },
                 {

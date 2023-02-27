@@ -63,13 +63,13 @@ export default function CaregiverPersonalData() {
           placeholder: 'Ex: Fulano dos Santos',
           validation: setValidationField(
             REGEX_NAME,
-            'Só são permitidas letras (A-Z), acentos e espaços'
+            'Só são permitidas letras (A-Z), acentos e espaços',
           )
             .required('Este campo não pode ficar em branco')
             .test(
               'start-empty',
               'Esse campo não aceita espaço(s) em branco no início do texto.',
-              (value) => empty(value)
+              (value) => empty(value),
             )
             .min(2, 'Nome deve ter ao menos 2 caracteres'),
         },
@@ -93,7 +93,7 @@ export default function CaregiverPersonalData() {
             .string()
             .nullable()
             .test('valid-cpf', 'O CPF digitado está incorreto', (value) =>
-              value != null ? validateCPF(value) : true
+              value != null ? validateCPF(value) : true,
             ),
         },
         {
@@ -146,7 +146,7 @@ export default function CaregiverPersonalData() {
     const fieldsWithErrors = Object.keys(config.errors);
     const myFields = fields.map((field) => field.name);
     const myErrors = fieldsWithErrors.filter(
-      (field) => myFields.indexOf(field) !== -1
+      (field) => myFields.indexOf(field) !== -1,
     );
 
     return (
@@ -193,19 +193,17 @@ export default function CaregiverPersonalData() {
         <AvatarContainer
           onPress={() => {
             navigate('ProfilePhoto', { edit: true });
-          }}
-        >
-          <Avatar source={photo} resizeMode='contain' />
+          }}>
+          <Avatar source={photo} resizeMode="contain" />
           <EditPhoto>
-            <IconEditPhoto name='edit' />
+            <IconEditPhoto name="edit" />
           </EditPhoto>
         </AvatarContainer>
 
         <Formik
           initialValues={user}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
+          onSubmit={handleSubmit}>
           {(config) => (
             <>
               <Accordion
