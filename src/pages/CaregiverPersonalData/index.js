@@ -88,10 +88,10 @@ export default function CaregiverPersonalData() {
           label: 'CPF',
           mask: 'cpf',
           placeholder: 'XXX.XXX.XXX-XX',
-          editable: user.cpf === null,
+          editable: user.cpf?.length <= 0,
           validation: yup
             .string()
-            .nullable()
+            .required("CPF é obrigatório")
             .test('valid-cpf', 'O CPF digitado está incorreto', (value) =>
               value != null ? validateCPF(value) : true,
             ),
@@ -186,6 +186,9 @@ export default function CaregiverPersonalData() {
       setUseModal();
     }
   };
+  if(!user.cpf) {
+    user.cpf = ""
+  }
 
   return (
     <>

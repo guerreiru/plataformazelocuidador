@@ -21,7 +21,6 @@ export default function Form({
       initialValues[f.name] = f.initialValue;
     }
   });
-
   const validationSchema = yup.object().shape(validations);
 
   return (

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Zelo Cuidador Familiar",
     "slug": "plataformazelocuidador",
-    "version": "2.3.4",
+    "version": "2.3.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "buildNumber": "2",
       "supportsTablet": false,
@@ -27,7 +29,7 @@
       },
       "googleServicesFile": "./google-services.json",
       "package": "com.plataformazelo.cuidador",
-      "versionCode": 18
+      "versionCode": 19
     },
     "notification": {
       "icon": "./assets/notification-icon.png",
@@ -40,6 +42,7 @@
       "eas": {
         "projectId": "8ed4806f-3426-4397-81f2-c63114967272"
       }
-    }
+    },
+    "owner": "plataformazelo"
   }
 }
