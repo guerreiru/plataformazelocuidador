@@ -2,7 +2,7 @@
   "expo": {
     "name": "Zelo Cuidador Familiar",
     "slug": "plataformazelocuidador",
-    "version": "2.3.5",
+    "version": "2.3.6",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -29,7 +29,7 @@
       },
       "googleServicesFile": "./google-services.json",
       "package": "com.plataformazelo.cuidador",
-      "versionCode": 19
+      "versionCode": 20
     },
     "notification": {
       "icon": "./assets/notification-icon.png",

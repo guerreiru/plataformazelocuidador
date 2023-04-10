@@ -21,7 +21,7 @@ export const URLS = {
 };
 
 export default {
-  BASE_URL: URLS.HOMOLOGA,
+  BASE_URL: URLS.PRODUCTION,
   STORAGE_KEY: '@ZELO_APP_CUIDADOR_FAMILIAR',
   API_KEY_YOUTUBE: 'AIzaSyAprV6TD9NaUlNap-dHtd0loMBEzuWxBXc',
   VERSION: version,
