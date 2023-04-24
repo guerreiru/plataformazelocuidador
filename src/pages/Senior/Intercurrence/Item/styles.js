@@ -5,6 +5,10 @@ export const Title = styled.Text`
   color: ${colors.PRIMARY};
   font-size: 20px;
 `;
+export const SubTitle = styled.Text`
+  color: ${colors.TEXT_GRAY_SECONDARY};
+  font-size: 14px;
+`;
 
 export const Description = styled.Text`
   font-size: 14px;

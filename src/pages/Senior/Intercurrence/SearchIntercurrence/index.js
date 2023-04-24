@@ -16,19 +16,48 @@ import {
   Divider,
   ContainerSelect,
 } from './styles';
+import { useEffect } from 'react';
+import useIntercurrence from '../../../../hooks/useIntercurrence';
+import useSenior from '../../../../hooks/useSenior';
 
-const SearchIntercurrence = ({ navigation }) => {
+const SearchIntercurrence = ({ navigation, ...route }) => {
   const [filterType, setFilterType] = useState(null);
+  const {  getIntercurrences } = useIntercurrence();
+  const { senior } = useSenior();
   const [date, setDate] = useState({ initial: null, end: null });
   const [type, setType] = useState(null);
-  const typeOptions = [
+  const [intercurrenceTypeSelectItems, setIntercurrenceTypeSelectItems] = useState([
     { label: 'Infecção', value: 'Infecção' },
     { label: 'Internação hospitalar', value: 'Internação hospitalar' },
     { label: 'Lesão na pele por pressão', value: 'Lesão na pele por pressão' },
     { label: 'Queda', value: 'Queda' },
     { label: 'Óbito', value: 'Óbito' },
-  ];
+  ]);
 
+  const loadIntercurrence = async () => {
+    const _intercurrence = await getIntercurrences(senior.id);
+		const _seniorIntercurrenceTypes = [];
+
+    Object.keys(_intercurrence).forEach((key) => {
+      _seniorIntercurrenceTypes.push(_intercurrence[key].intercurrence_type);
+    });
+    const _seniorIntercurrenceTypesFiltered = [
+      ...new Set(_seniorIntercurrenceTypes),
+    ];
+    
+    const arraySelectItems = _seniorIntercurrenceTypesFiltered.map(type => ({
+        label: type,
+        value: type,
+        name: type,
+      })
+    );
+    
+		setIntercurrenceTypeSelectItems(arraySelectItems);
+  };
+
+  useEffect(() => {
+    loadIntercurrence()
+  }, [])
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
@@ -81,7 +110,7 @@ const SearchIntercurrence = ({ navigation }) => {
           <Title>Por tipo da intercorrência</Title>
           <Radio
             name={'types'}
-            options={typeOptions}
+            options={intercurrenceTypeSelectItems}
             value={type}
             fontStyle="normal"
             handleChange={(value) => setType(value)}

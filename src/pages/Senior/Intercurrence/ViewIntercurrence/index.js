@@ -108,7 +108,13 @@ const ViewIntercurrence = ({ route, navigation }) => {
         );
         break;
       default:
-        break;
+        elements.push(
+          ...[
+            {
+              title: 'Observações',
+              value: item.custom_description || "a",
+            },
+        ])
     }
 
     return <ItemList list={elements} />;
