@@ -39,6 +39,7 @@ export default () => {
         <ModalReport
           title={title}
           visible={confirm}
+          setVisible={setConfirm}
           onClose={() => setConfirm(false)}
           onPressToView={() => {
             setConfirm(false);

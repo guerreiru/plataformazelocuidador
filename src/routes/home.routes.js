@@ -8,6 +8,7 @@ import ClinicalFunctionalEvaluation from 'pages/Senior/ClinicalFunctionalEvaluat
 import SearchIntercurrence from 'pages/Senior/Intercurrence/SearchIntercurrence';
 import ViewIntercurrence from 'pages/Senior/Intercurrence/ViewIntercurrence';
 import RegisterCaregiver from 'pages/Senior/Teams/RegisterCaregiver';
+import CaregiverPersonalData from 'pages/CaregiverPersonalData';
 import DisengageReasons from 'pages/Senior/DisengageReasons';
 import HistoryMedicine from 'pages/Senior/Medicines/HistoryMedicine';
 import SearchMedicine from 'pages/Senior/Medicines/SearchMedicine';
@@ -147,6 +148,19 @@ export default function HomeRoutes() {
           component={PersonalData}
           options={{ title: 'Dados pessoais', ...barStyles }}
         />
+
+        {/* Validate CPF Screens */}
+        <Screen
+          name="ProfessionalEditProfile"
+          component={CaregiverPersonalData}
+          options={{ title: 'Editar Dados Profissionais', ...barStyles }}
+        />
+        <Screen
+          name="Setting"
+          component={Home}
+          options={{ title: 'Pessoas Idosas', ...barStyles }}
+        />
+        {/* End of Validate CPF Screens */}
 
         <Screen
           name="Intercurrence"

@@ -26,7 +26,7 @@ export const Imag = styled.Image`
 
 export const Card = styled.View`
   width: 70%;
-  height: 35%;
+  padding: 35px 2px;
   background-color: ${colors.WHITE};
   border-radius: 5px;
   margin-bottom: 16px;
@@ -40,9 +40,28 @@ export const Card = styled.View`
 export const Header = styled.Text`
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: ${colors.SUBTITLE};
   text-align: center;
+`;
+export const ContainerText = styled.View`
+  position: relative;
+  width: 100%;
+  margin: 16px 1px;
+  padding: 1px 10px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ImgInfo = styled.Image`
+  width: 32px;
+  height: 14px;
+`;
+
+export const CenteredText = styled.Text`
+margin-bottom: 8px;
+  text-align: center;
+  textAlign: center;
 `;
 
 export const Message = styled.Text`
