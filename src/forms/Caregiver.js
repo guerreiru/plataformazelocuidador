@@ -52,6 +52,7 @@ export const fieldAccompaniesSince = () => [
     label: 'Acompanha desde',
     mask: 'datetime',
     placeholder: 'DD/MM/AAAA',
+    initialValue: moment().format('DD/MM/YYYY'),
     options: {
       format: 'DD/MM/YYYY',
     },
