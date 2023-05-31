@@ -59,7 +59,7 @@ export default function CaregiverPersonalData() {
       fields: [
         {
           name: 'full_name',
-          label: 'Nome Completo*',
+          label: 'Nome Completo *',
           placeholder: 'Ex: Fulano dos Santos',
           validation: setValidationField(
             REGEX_NAME,
@@ -75,9 +75,9 @@ export default function CaregiverPersonalData() {
         },
         {
           name: 'email',
-          label: 'Email*',
+          label: 'E-mail *',
           placeholder: 'exemplo@email.com',
-          editable: false,
+          editable: true,
           validation: yup
             .string()
             .email('O e-mail digitado está incorreto')
@@ -85,7 +85,7 @@ export default function CaregiverPersonalData() {
         },
         {
           name: 'cpf',
-          label: 'CPF',
+          label: 'CPF *',
           mask: 'cpf',
           placeholder: 'XXX.XXX.XXX-XX',
           editable: user.cpf?.length <= 0,

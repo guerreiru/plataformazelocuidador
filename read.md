@@ -6,6 +6,7 @@ lembrar que para a publicação em DEV ou TESTE deve ser utilizado o parâmetro
 
 ## Gerar build local (APK)
 
+- Verificar se está em Homologação `/src/config/index`
 - (Android) > `eas build --profile preview --platform android`
 
 
