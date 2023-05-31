@@ -33,7 +33,6 @@ export default function InformCode({ route }) {
             validation: Yup.string()
               .required('Este campo não pode ficar em branco')
               .length(6, 'Código inválido, o código possui 6 digitos'),
-            mask: 'custom',
             secret: true,
             keyboardType: 'numeric',
             options: {
