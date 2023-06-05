@@ -11,7 +11,7 @@ const configApi = axios.create({
   headers: {
     'My-Operational-System': Platform.OS === 'ios' ? 'IOS' : 'ANDROID',
   },
-  timeout: 30000,
+  timeout: 60000,
 });
 
 setIpAddress(configApi);
@@ -33,13 +33,9 @@ const api = {
   get: async (url, params = {}) => {
     try {
       params = adjustParamsToNull(params);
-      // console.log('INICIOU');
       const response = await configApi.get(url, { params });
-      // console.log('FINALIZOU', response.status);
       return response.data;
     } catch (error) {
-      //console.log(error);
-      //console.log('DEU ERRO');
       errorHandler(error, params);
     }
   },

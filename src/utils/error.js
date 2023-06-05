@@ -30,6 +30,10 @@ export function errorHandler(err) {
   const errorsMsg = getErrors(err);
 
   if (errorsMsg) {
+    if (errorsMsg.includes("timeout of")) {
+      message.error('Falha na conecção com o servidor. Verifique sua conecção e tente novamente.');
+      return;
+    }
     message.error(errorsMsg);
     return;
   }
